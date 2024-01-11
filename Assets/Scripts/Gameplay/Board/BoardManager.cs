@@ -9,7 +9,7 @@ namespace DCG.Gameplay
         [SerializeField] Board board = null;
 
         public const int MAP_SIZE = 8;
-        public const float PIECE_SIZE = 1f;
+        public const float PIECE_SIZE = 1.5f;
 
         private BoardCoordinate[,] boardMap = null;
 
