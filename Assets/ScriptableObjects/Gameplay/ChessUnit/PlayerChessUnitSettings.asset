@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 387508db4af52034ba3c59d3899cc0d0, type: 3}
+  m_Name: PlayerChessUnitSettings
+  m_EditorClassIdentifier: 
+  playerPawnSpawnRowIndex: 1
+  playerUnitSpawnRowIndex: 0
+  opponentPawnSpawnRowIndex: 6
+  opponentUnitSpawnRowIndex: 7
+  whiteUnitMaterial: {fileID: 2100000, guid: 1451184982b824a4eae03b9dbe736f74, type: 2}
+  blackUnitMaterial: {fileID: 2100000, guid: 413384487901ea745964ea7ea7671b02, type: 2}
+  chessUnitPawn: {fileID: 243559244162315781, guid: 1aba57229a51ee242817a4b3361ad5d5, type: 3}
+  chessUnits:
+  - {fileID: 4055271839333666750, guid: 4f00b9e06c3d8d94badb6fc83bb30350, type: 3}
+  - {fileID: 7662515565247808239, guid: d4862c3ee0acf44469f908ef1cd083da, type: 3}
+  - {fileID: 774504131996197624, guid: 341c13ced544d9b4ebacf28c5947a51b, type: 3}
+  - {fileID: 3909936899466796312, guid: a90bd4c161ef2f74a8f94f182b66d9f2, type: 3}
+  - {fileID: 3153831203760771990, guid: a3c5fae970006e14b9e614bddc5f9597, type: 3}
+  - {fileID: 774504131996197624, guid: 341c13ced544d9b4ebacf28c5947a51b, type: 3}
+  - {fileID: 7662515565247808239, guid: d4862c3ee0acf44469f908ef1cd083da, type: 3}
+  - {fileID: 4055271839333666750, guid: 4f00b9e06c3d8d94badb6fc83bb30350, type: 3}
