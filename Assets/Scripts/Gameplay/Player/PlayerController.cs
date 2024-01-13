@@ -7,6 +7,8 @@ namespace DCG.Gameplay
     {
         [SerializeField] ChessUnitController unitController = null;
 
+        public bool IsChessUnitSelected => unitController.IsChessUnitSelected;
+
         private void Start()
         {
             InitController();
@@ -14,7 +16,18 @@ namespace DCG.Gameplay
 
         public void InitController() 
         {
+            unitController.InitConroller();
             unitController.SpawnChessUnits(true, ChessUnitColors.White);
+        }
+
+        public bool PickChessUnit(BoardCoordinate coordinate) 
+        {
+            return unitController.PickChessUnit(coordinate);
+        }
+
+        public void DropSelectedChessUnit() 
+        {
+            unitController.DropSelectedChessUnit();
         }
     }
 }

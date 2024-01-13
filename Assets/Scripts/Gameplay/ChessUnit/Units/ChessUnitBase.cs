@@ -8,8 +8,22 @@ namespace DCG.Gameplay
 
         [SerializeField] protected MeshRenderer meshRenderer = null;
 
-        public virtual void InitUnit(Material material) 
+        public BoardCoordinate Coordinate { get; private set; }
+
+        public Vector3 Position => transform.position;
+        public Vector3 TopPosition 
         {
+            get 
+            {
+                Vector3 pos = Position;
+                pos.y += meshRenderer.bounds.max.y;
+                return pos;
+            }
+        }
+
+        public virtual void InitUnit(BoardCoordinate coordinate, Material material) 
+        {
+            Coordinate = coordinate;
             meshRenderer.material = material;
         }
     }

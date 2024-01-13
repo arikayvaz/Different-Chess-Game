@@ -1,29 +1,49 @@
 namespace DCG.Gameplay
 {
     using Common;
+    using System.Collections.Generic;
     using UnityEditor;
     using UnityEngine;
 
     public class BoardManager : Singleton<BoardManager>
     {
+        [SerializeField] BoardSettingsSO boardSettings = null;
         [SerializeField] Board board = null;
 
-        public const int MAP_SIZE = 8;
-        public const float PIECE_SIZE = 1.5f;
+        public int MapSize => boardSettings.mapSize;
+        public float PieceSize => boardSettings.pieceSize;
 
         private BoardCoordinate[,] boardMap = null;
+
+        public Vector3 GetWorldPosition(BoardCoordinate coordinate) 
+        {
+            return boardSettings.GetWorldPosition(coordinate);
+        }
+
+        public BoardCoordinate GetBoardCoordinate(Vector3 position) 
+        {
+            return boardSettings.GetBoardCoordinate(position);
+        }
+
+        public bool IsCoordinateValid(BoardCoordinate coordinate) 
+        {
+            if (!coordinate.IsValid)
+                return false;
+
+            return coordinate.row <= boardSettings.mapSize - 1 && coordinate.column <= boardSettings.mapSize - 1;
+        }
 
         protected override void Awake()
         {
             base.Awake();
 
             InitBoardMap();
-            board.InitBoard(boardMap);
+            board.InitBoard(boardMap, MapSize, PieceSize);
         }
 
         private void InitBoardMap() 
         {
-            boardMap = new BoardCoordinate[MAP_SIZE, MAP_SIZE];
+            boardMap = new BoardCoordinate[MapSize, MapSize];
 
             for (int i = 0; i < boardMap.GetLength(0); i++)
             {
@@ -40,7 +60,7 @@ namespace DCG.Gameplay
         public int row;
         public int column;
 
-        public Vector3 Position => new Vector3(column * BoardManager.PIECE_SIZE, 0f, row * BoardManager.PIECE_SIZE);
+        public bool IsValid => row >= 0 && column >= 0;
 
         public BoardCoordinate(int row, int column)
         {

@@ -2,7 +2,7 @@ namespace DCG.Gameplay
 {
     using UnityEngine;
 
-    [CreateAssetMenu(fileName = "ChessUnitSettings", menuName = "DCG/Chess Unit Settings")]
+    [CreateAssetMenu(fileName = "ChessUnitSettings", menuName = "DCG/Chess Unit/Chess Unit Settings")]
     public class ChessUnitSettingsSO : ScriptableObject
     {
         [Header("Player")]
