@@ -29,6 +29,11 @@ namespace DCG.Gameplay
             HideSelection();
         }
 
+        public (ChessUnitTypes, BoardCoordinate) GetSelectedChessUnitInfo() 
+        {
+            return new(selectedChessUnit.UnitType, selectedChessUnit.Coordinate);
+        }
+
         const float SELECTION_POS_Y_DELTA = 1f;
         private void ShowSelection(Vector3 unitPos) 
         {

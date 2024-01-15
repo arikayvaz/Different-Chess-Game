@@ -155,6 +155,9 @@ MonoBehaviour:
   worldPositionLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  chestUnitSelectLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!4 &157108712
 Transform:
   m_ObjectHideFlags: 0
@@ -537,7 +540,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447590486}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -579,6 +582,90 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447590486}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1460356452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1460356453}
+  m_Layer: 0
+  m_Name: previews
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1460356453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460356452}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1549411549}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1549411548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549411549}
+  - component: {fileID: 1549411550}
+  m_Layer: 0
+  m_Name: MovementController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1549411549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549411548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1460356453}
+  m_Father: {fileID: 1732387195}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1549411550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549411548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa9900e38323594d81683b849bf1373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawnMovementCalculator: {fileID: 11400000, guid: 7f8ff6a5249443b4eb36435ff1f9d2a2, type: 2}
+  knightMovementCalculator: {fileID: 11400000, guid: f358ba3bb557a864e95550c94bb12b99, type: 2}
+  bishopMovementCalculator: {fileID: 11400000, guid: a8f63689533542e40abb6b7333e3f811, type: 2}
+  rookMovementCalculator: {fileID: 11400000, guid: d8f7b1bf6a6982a4db45868d958ef76a, type: 2}
+  queenMovementCalculator: {fileID: 11400000, guid: ed473866259535b4bad93cbba3428b92, type: 2}
+  kingMovementCalculator: {fileID: 11400000, guid: 00a399000d1123e4aa42fba6fb5a20e5, type: 2}
+  goPreviewOrigin: {fileID: 6000846087153939956, guid: 137a44bdcf907b44ab3c5ba3141b1098, type: 3}
+  trPreviewParent: {fileID: 1460356453}
 --- !u!1 &1577178765
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1577178766}
   m_Layer: 0
-  m_Name: goSelection
+  m_Name: selectionPreview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,6 +822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitSettings: {fileID: 11400000, guid: 6e5867104c506fa4f9a667ef28feeaba, type: 2}
   selectionController: {fileID: 882416788}
+  movementController: {fileID: 1549411550}
 --- !u!4 &1732387195
 Transform:
   m_ObjectHideFlags: 0
@@ -748,6 +836,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 882416789}
+  - {fileID: 1549411549}
   m_Father: {fileID: 1877014645}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

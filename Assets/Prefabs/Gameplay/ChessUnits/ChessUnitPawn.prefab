@@ -15,6 +15,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChessUnitPawn
       objectReference: {fileID: 0}
+    - target: {fileID: 2661784682738145490, guid: b0fe8d81aed70ac40818621948d6da39, type: 3}
+      propertyPath: m_Height
+      value: 1.4768538
+      objectReference: {fileID: 0}
+    - target: {fileID: 2661784682738145490, guid: b0fe8d81aed70ac40818621948d6da39, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2661784682738145490, guid: b0fe8d81aed70ac40818621948d6da39, type: 3}
+      propertyPath: m_Center.y
+      value: 0.7302607
+      objectReference: {fileID: 0}
     - target: {fileID: 4445293147272435953, guid: b0fe8d81aed70ac40818621948d6da39, type: 3}
       propertyPath: m_Mesh
       value: 

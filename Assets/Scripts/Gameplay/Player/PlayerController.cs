@@ -18,16 +18,22 @@ namespace DCG.Gameplay
         {
             unitController.InitConroller();
             unitController.SpawnChessUnits(true, ChessUnitColors.White);
+            unitController.CalculateMoveableCoordinates();
         }
 
-        public bool PickChessUnit(BoardCoordinate coordinate) 
+        public void PickChessUnit(ChessUnitBase chessUnit) 
         {
-            return unitController.PickChessUnit(coordinate);
+            unitController.PickChessUnit(chessUnit);
         }
 
         public void DropSelectedChessUnit() 
         {
             unitController.DropSelectedChessUnit();
+        }
+
+        public bool IsCoordinateOtherUnitMoveCoordinate(BoardCoordinate coordinate) 
+        {
+            return unitController.IsCoordinateOtherUnitMoveCoordinate(coordinate);
         }
     }
 }

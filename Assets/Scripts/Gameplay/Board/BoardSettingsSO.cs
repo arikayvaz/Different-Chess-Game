@@ -26,7 +26,12 @@ namespace DCG.Gameplay
             int column = Mathf.RoundToInt(fixedX / pieceSize);
             int row = Mathf.RoundToInt(fixedZ / pieceSize);
 
-            return new BoardCoordinate(row, column);
+            return new BoardCoordinate(column, row);
+        }
+
+        public bool IsCoordinateInBoardRegion(BoardCoordinate coordinate) 
+        {
+            return (coordinate.column >= 0 && coordinate.column < mapSize) && (coordinate.row >= 0 && coordinate.row < mapSize);
         }
     }
 }
